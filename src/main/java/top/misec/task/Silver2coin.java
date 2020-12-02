@@ -26,13 +26,13 @@ public class Silver2coin implements Task {
     @Override
     public void run() {
 
-        JsonObject resultJson = HttpUtil.doGet(ApiList.silver2coin);
-        int responseCode = resultJson.get(statusCodeStr).getAsInt();
-        if (responseCode == 0) {
-            logger.info("银瓜子兑换硬币成功");
-        } else {
-            logger.debug("银瓜子兑换硬币失败 原因是: " + resultJson.get("msg").getAsString());
-        }
+//         JsonObject resultJson = HttpUtil.doGet(ApiList.silver2coin);
+//         int responseCode = resultJson.get(statusCodeStr).getAsInt();
+//         if (responseCode == 0) {
+//             logger.info("银瓜子兑换硬币成功");
+//         } else {
+//             logger.debug("银瓜子兑换硬币失败 原因是: " + resultJson.get("msg").getAsString());
+//         }
 
         JsonObject queryStatus = HttpUtil.doGet(ApiList.getSilver2coinStatus).get("data").getAsJsonObject();
         double silver2coinMoney = oftenAPI.getCoinBalance();
